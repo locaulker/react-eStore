@@ -3,7 +3,9 @@
 Fonts
 ======
 */
-@import url("https://fonts.googleapis.com/css?family=Catamaran:300,400|Kaushan+Script&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Catamaran:300,400|Kaushan+Script&display=swap"); */
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 /* 
 ====== 
 Variables 
@@ -15,10 +17,13 @@ Variables
   /* --primaryColor: #f15025;
   --primaryDarkColor: #c02c03; */
 
-  --primaryColor: #f0c420;
-  --primaryDarkColor: #c02c03;
+  /* --primaryColor: #ffce0a; */
+  --primaryColor: #2d1e1f;
+  /* --primaryDarkColor: #fd7e14; */
+  --mainCTA: #fd7e14;
+  --secondaryCTA: #ffce0a;
   
-  --primaryFont: "Catamaran", sans-serif;
+  --primaryFont: "Montserrat", sans-serif;
   --slantedFont: "Kaushan Script", cursive;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
@@ -28,14 +33,14 @@ Variables
   --mainGrey: #ececec;
   --darkGrey: #afafaf;
   /* --mainRed: #bd0303; */
-  --mainRed: #f0c420;
+  /* --mainRed: #f0c420; */
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.3rem;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --mainBorderRadius: 0.25rem;
   --smallWidth: 85vw;
-  --maxWidth: 40rem;
+  --maxWidth: 80rem;
   --fullWidth: 1170px;
 }
 /* 
@@ -49,15 +54,20 @@ Global Styles
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: var(--primaryFont);
   color: var(--mainBlack);
   background: var(--mainBackground);
   line-height: 1.4;
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.7rem;
+  /* font-weight: 300; */
 }
-h1,
+
+/* h1,
 h2,
 h3,
 h4,
@@ -66,7 +76,23 @@ h6 {
   font-family: var(--primaryFont);
   margin-bottom: 1.25rem;
   letter-spacing: var(--mainSpacing);
+} */
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Oswald', sans-serif !important;
+  letter-spacing: .25rem;
+  color: var(--primaryColor);
+  font-weight: 300;
+  text-transform: uppercase;
 }
+
+h1 {font-size: 4.8rem !important;}
+h2 {font-size: 3.0rem !important;}
+h3 {font-size: 2.5rem !important;}
+h4 {font-size: 2.2rem !important;}
+h5 {font-size: 1.6rem !important;}
+h6 {font-size: 1.4rem !important;}
+
 p {
   margin-bottom: 1.25rem;
 }
@@ -104,11 +130,11 @@ Buttons
   letter-spacing: var(--mainSpacing);
   color: var(--primaryColor);
   border: 2px solid var(--primaryColor);
-  padding: 0.45rem 0.8rem;
+  padding: 1.5rem 0.8rem;
   display: inline-block;
   transition: var(--mainTransition);
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1.8rem;
   background: transparent;
 }
 .btn:hover {
@@ -137,7 +163,7 @@ Buttons
   width: 100%;
   display: block;
   margin: 0 auto;
-  box-shadow: var(--lightShadow);
+  /* box-shadow: var(--lightShadow); */
   text-align: center;
 }
 /* 
@@ -150,7 +176,7 @@ Header
 }
 .logo {
   margin: 0 auto;
-  width: 9rem;
+  width: 20rem;
 }
 .header ul {
   display: flex;
@@ -165,14 +191,15 @@ Header
   align-items: center;
 }
 .header a {
-  text-transform: capitalize;
+  text-transform: uppercase;
   margin: 0 0.25rem;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  font-weight: bold;
   transition: var(--mainTransition);
 }
 .header a:hover {
-  color: var(--primaryColor);
+  color: var(--mainCTA);
 }
 @media screen and (min-width: 768px) {
   .header a {
@@ -196,34 +223,35 @@ Hero
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--primaryDarkColor);
+  color: var(--mainCTA);
 }
 .banner {
   width: var(--smallWidth);
   max-width: var(--fullWidth);
 }
 .hero h1 {
-  font-size: 3rem;
+  /* font-size: 3rem; */
+  font-weight: 100;
   text-transform: capitalize;
-  color: var(--primaryColor);
+  color: var(--mainWhite);
 }
 .hero p {
-  font-size: 1.5rem;
+  /* font-size: 1.2rem; */
   font-weight: bold;
   letter-spacing: 3px;
   margin-bottom: 1.75rem;
-  color: var(--primaryColor);
+  color: var(--mainWhite);
 }
 .btn-hero {
   border-radius: 0;
   font-weight: bold;
   padding: 0.8rem 1.5rem;
-  background: var(--primaryDarkColor);
-  border-color: var(--primaryDarkColor);
+  background: var(--mainCTA);
+  border-color: var(--mainCTA);
   color: var(--mainBlack);
 }
 .btn-hero:hover {
-  color: var(--primaryDarkColor);
+  color: var(--mainCTA);
 }
 @media screen and (min-width: 768px) {
   .banner {
@@ -247,14 +275,14 @@ About
 ======
 */
 .about-section {
-  width: var(--smallWidth);
+  /* width: var(--smallWidth); */
   max-width: var(--maxWidth);
   margin: 0 auto;
 }
 .about-section p {
-  line-height: 2rem;
-  font-weight: 400;
-  letter-spacing: 2px;
+  /* line-height: 2rem; */
+  /* font-weight: 400;
+  letter-spacing: 2px; */
 }
 /* 
 ====== 
@@ -280,10 +308,11 @@ Product List
 }
 .section-title {
   font-size: 2rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   text-align: center;
   margin-bottom: 3.5rem;
+  font-weight: 300;
 }
 .products-center {
   width: var(--smallWidth);
@@ -343,7 +372,7 @@ Product List
   margin-bottom: 0.5rem;
 }
 .product-price {
-  color: var(--primaryColor);
+  color: var(--mainCTA);
   font-weight: bold;
   margin-bottom: 0;
   font-size: 1.1rem;
@@ -364,10 +393,14 @@ Single Product
   margin-bottom: 3rem;
 }
 .single-product-image {
-  max-width: 25rem;
-  align-self: center;
+  max-width: 35rem;
+  align-self: top;
   margin: 0 auto;
   margin-bottom: 2rem;
+}
+.single-product-price {
+  color: var(--mainCTA) !important;
+  margin: 1.5rem 0 .8rem 0;
 }
 .single-product h1 {
   text-transform: capitalize;
