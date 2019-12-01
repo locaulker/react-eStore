@@ -130,11 +130,11 @@ Buttons
   letter-spacing: var(--mainSpacing);
   color: var(--primaryColor);
   border: 2px solid var(--primaryColor);
-  padding: 1.5rem 0.8rem;
+  padding: 1.1rem 1.2rem;
   display: inline-block;
   transition: var(--mainTransition);
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   background: transparent;
 }
 .btn:hover {
@@ -430,6 +430,10 @@ Cart
   text-align: center;
   text-transform: capitalize;
 }
+.empty-cart h3 {
+  color: var(--mainCTA);
+  margin-bottom: 2rem;
+}
 .cart-items {
   width: var(--smallWidth);
   margin: 0 auto;
@@ -476,8 +480,9 @@ Cart
   font-size: 0.8rem;
 }
 .amount-btn {
-  color: var(--primaryColor);
+  color: var(--mainCTA);
   font-size: 1rem;
+  outline: none;
 }
 /* 
 ====== 

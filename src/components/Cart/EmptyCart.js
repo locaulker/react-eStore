@@ -1,10 +1,15 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 
 const EmptyCart = () => {
   return (
-    <div>
-      <h1>hello from EmptyCart</h1>
-    </div>
+    <section className="empty-cart section">
+      <h3>-- cart is empty --</h3>
+      <Link to="/products" className="btn btn-primary">
+        shop now
+      </Link>
+    </section>
   )
 }
 

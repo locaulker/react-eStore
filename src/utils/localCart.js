@@ -5,7 +5,7 @@ export default [
     price: 1.99,
     image:
       "https://res.cloudinary.com/coding-addict/image/upload/v1572564510/nemo2qyllu9o0fipcxzp.png",
-    amount: 3
+    quantity: 3
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export default [
     price: 9.99,
     image:
       "https://res.cloudinary.com/coding-addict/image/upload/v1572564463/wvgfcmbplbyyegwppc5a.png",
-    amount: 5
+    quantity: 5
   },
   {
     id: 3,
@@ -21,6 +21,6 @@ export default [
     price: 7.99,
     image:
       "https://res.cloudinary.com/coding-addict/image/upload/v1572564572/dlmagevwczesbw05we6a.png",
-    amount: 4
+    quantity: 4
   }
 ];
