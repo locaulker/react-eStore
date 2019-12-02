@@ -5,7 +5,7 @@ import {CartContext} from '../../context/cart'
 
 const CartItem = ({id, image, title, price, quantity}) => {
   // cart context
-
+  const { removeItem, increaseQuantity, decreaseQuantity } = React.useContext(CartContext)
 
 
   return (
@@ -18,7 +18,7 @@ const CartItem = ({id, image, title, price, quantity}) => {
         type="button" 
         className="cart-btn remove-btn"
         onClick={ () => {
-          console.log('item removed')
+          removeItem(id)
         }}
         >remove</button>
       </div>
@@ -27,7 +27,7 @@ const CartItem = ({id, image, title, price, quantity}) => {
           type="button" 
           className="cart-btn amount-btn"
           onClick={ () => {
-            console.log('qty increased')
+            increaseQuantity(id)
           }}
         >
           <FaAngleUp />
@@ -37,7 +37,7 @@ const CartItem = ({id, image, title, price, quantity}) => {
           type="button" 
           className="cart-btn amount-btn"
           onClick={ () => {
-            console.log('qty decreased')
+            decreaseQuantity(id, quantity)
           }}
         >
           <FaAngleDown />
