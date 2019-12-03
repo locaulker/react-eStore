@@ -18,10 +18,16 @@ const ProductDetails = () => {
     return <Loading />
   } else {
 
-    const {image:{url}, title, price, description} = product
+    const {
+      image,
+      title, 
+      price, 
+      description
+    } = product
+
     return (
       <section className="single-product">
-        <img src={url} alt={title} className="single-product-image"/>
+        <img src={image} alt={title} className="single-product-image"/>
         <article>
           <h5>{title}</h5>
           <h2 className="single-product-price">${price}</h2>
