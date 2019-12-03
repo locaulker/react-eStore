@@ -36,8 +36,10 @@ Variables
   /* --mainRed: #f0c420; */
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.3rem;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  /* --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5); */
+  --lightShadow: 0px 10px 40px rgba(91, 107, 174, 0.15);
+  /* --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5); */
+  --darkShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --mainBorderRadius: 0.25rem;
   --smallWidth: 85vw;
   --maxWidth: 80rem;
@@ -533,9 +535,9 @@ Login Form
   width: 100%;
   border: none;
   border-bottom: 2px solid var(--darkGrey);
-  margin-bottom: 1.25rem;
-  padding: 0.5rem;
-  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  font-size: 1.8rem;
 }
 .form-empty,
 .stripe-errors {
@@ -543,19 +545,23 @@ Login Form
   color: var(--mainRed);
 }
 .register-link {
-  margin-bottom: 0;
-  margin-top: 1rem;
+  /* margin-bottom: 0; */
+  margin: 2.5rem 0 1.5rem 0;
   text-align: center;
 }
 .register-link button {
   background: transparent;
   border: none;
-  color: var(--primaryColor);
+  /* color: var(--primaryColor); */
+  color: var(--mainCTA);
   text-transform: capitalize;
   font-size: inherit;
   display: inline-block;
   margin-left: 0.5rem;
   cursor: pointer;
+}
+.register-link button:hover {
+  color: var(--primaryColor);
 }
 .disabled {
   color: var(--mainWhite);
