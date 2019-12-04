@@ -522,7 +522,7 @@ Login Form
 .login-form,
 .checkout-form {
   background: var(--mainWhite);
-  padding: 1.25rem 1rem;
+  padding: 2.2rem 1.8rem;
   text-transform: capitalize;
   border-radius: var(--mainBorderRadius);
   box-shadow: var(--lightShadow);
@@ -536,7 +536,7 @@ Login Form
   border: none;
   border-bottom: 2px solid var(--darkGrey);
   margin-bottom: 3rem;
-  padding: 1.5rem;
+  padding: 1.2rem;
   font-size: 1.8rem;
 }
 .form-empty,

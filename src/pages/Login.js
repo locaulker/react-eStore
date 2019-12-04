@@ -1,10 +1,11 @@
 import React from 'react'
 
 // strapi functions
+import loginUser from '../strapi/loginUser'
+import registerUser from '../strapi/registerUser'
 
 // user handling
 import {useHistory} from 'react-router-dom'
-
 
 
 const Login = () => {
@@ -19,14 +20,36 @@ const Login = () => {
   const [isMember, setIsMember] = React.useState(true)
 
   // empty variables
-  let isEmpty = false
+  let isEmpty = !email || !password || !username
 
   const toggleMember = () => {
-
+    setIsMember( (prevMember) => {
+      let isMember = !prevMember
+      isMember ? setUsername('default') : setUsername('')
+      return isMember
+    })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
+    // alert
+    e.preventDefault()
+    let response
 
+    if (isMember) {
+      // response = await loginUser
+    } else {
+      response = await registerUser({
+        email, password, username
+      })
+    }
+    if (response) {
+      // alert
+      console.log('success');
+      console.log(response);
+      
+    } else {
+      // show alert
+    }
   }
 
   return (
@@ -49,7 +72,7 @@ const Login = () => {
 
         {/* password input */}
         <div className="form-control">
-          <label htmlFor="email">password</label>
+          <label htmlFor="password">password</label>
           <input 
             type="password" 
             id="password" 
@@ -88,11 +111,11 @@ const Login = () => {
         
         {/* link to register */}
         <p className="register-link">
-          {!isMember ? "need to register" : "already a member?"}
+          {!isMember ? "already a member?" : "need to register?"}
           <button 
             type="button" 
             onClick={toggleMember}
-          >login</button>
+          >Click here</button>
         </p>
 
       </form>
