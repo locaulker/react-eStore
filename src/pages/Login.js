@@ -6,12 +6,16 @@ import registerUser from '../strapi/registerUser'
 
 // user handling
 import {useHistory} from 'react-router-dom'
+import {UserContext} from '../context/user'
 
 
 const Login = () => {
   const history = useHistory()
 
   // setup user context
+  const {userLogin} = React.useContext(UserContext)
+  
+  
 
   // state values
   const [email, setEmail] = React.useState('')
@@ -36,17 +40,21 @@ const Login = () => {
     let response
 
     if (isMember) {
-      // response = await loginUser
+      response = await loginUser({
+        email,
+        password
+      })
     } else {
       response = await registerUser({
         email, password, username
       })
     }
+
     if (response) {
-      // alert
-      console.log('success');
-      console.log(response);
-      
+      const {jwt: token, user:{username}} = response.data
+      const newUser = {token, username}
+      userLogin(newUser)
+      history.push("/products")
     } else {
       // show alert
     }
