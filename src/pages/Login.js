@@ -13,7 +13,7 @@ const Login = () => {
   const history = useHistory()
 
   // setup user context
-  const {userLogin} = React.useContext(UserContext)
+  const {userLogin, alert, showAlert} = React.useContext(UserContext)
   
   
 
@@ -24,7 +24,7 @@ const Login = () => {
   const [isMember, setIsMember] = React.useState(true)
 
   // empty variables
-  let isEmpty = !email || !password || !username
+  let isEmpty = !email || !password || !username || alert.show
 
   const toggleMember = () => {
     setIsMember( (prevMember) => {
@@ -35,6 +35,9 @@ const Login = () => {
   }
 
   const handleSubmit = async e => {
+    showAlert({
+      msg: 'accessing user details. please wait...'
+    })
     // alert
     e.preventDefault()
     let response
@@ -54,9 +57,16 @@ const Login = () => {
       const {jwt: token, user:{username}} = response.data
       const newUser = {token, username}
       userLogin(newUser)
+      showAlert({
+        msg: `logged in: happy shopping ${username}`
+      })
       history.push("/products")
     } else {
       // show alert
+      showAlert({
+        msg: 'error! please try again',
+        type: 'danger'
+      })
     }
   }
 

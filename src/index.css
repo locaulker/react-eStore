@@ -32,7 +32,7 @@ Variables
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #afafaf;
-  /* --mainRed: #bd0303; */
+  --mainRed: #bd0303;
   /* --mainRed: #f0c420; */
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.3rem;
@@ -579,7 +579,7 @@ Login Button
 ======
 */
 .login-btn {
-  text-transform: capitalize;
+  text-transform: uppercase;
   background: transparent;
   display: inline-block;
   border: none;
@@ -587,12 +587,12 @@ Login Button
   font-family: var(--primaryFont);
   margin: 0 0.25rem;
   font-size: 0.85rem;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   transition: var(--mainTransition);
-  font-weight: 300;
+  font-weight: 700;
 }
 .login-btn:hover {
-  color: var(--primaryColor);
+  color: var(--mainRed);
 }
 @media screen and (min-width: 768px) {
   .login-btn {
@@ -613,8 +613,8 @@ Alert
   display: none;
   z-index: 10;
   background: green;
-  width: 24rem;
-  padding: 2.5rem 1.5rem;
+  width: 34rem;
+  padding: 1.5rem 1.5rem;
   text-align: center;
   color: var(--mainWhite);
   font-size: 1.2rem;
@@ -654,8 +654,8 @@ Alert
 Checkout
 ======
 */
-.checkout-form h3 span {
-  color: var(--primaryColor);
+.checkout-form h4 span {
+  color: var(--mainCTA);
 }
 .stripe-info {
   font-size: 80%;
