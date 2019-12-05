@@ -82,7 +82,7 @@ h6 {
 
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Oswald', sans-serif !important;
-  letter-spacing: .25rem;
+  /* letter-spacing: .25rem; */
   color: var(--primaryColor);
   font-weight: 300;
   text-transform: uppercase;
@@ -519,6 +519,11 @@ Login Form
   margin: 0 auto;
   max-width: var(--maxWidth);
 }
+
+.form h4 {
+  padding: 1rem 0;
+}
+
 .login-form,
 .checkout-form {
   background: var(--mainWhite);
@@ -536,8 +541,9 @@ Login Form
   border: none;
   border-bottom: 2px solid var(--darkGrey);
   margin-bottom: 3rem;
-  padding: 1.2rem;
+  padding: 1rem;
   font-size: 1.8rem;
+  outline: none;
 }
 .form-empty,
 .stripe-errors {
@@ -676,6 +682,7 @@ Checkout
 .checkout-form .form-empty {
   margin-top: 1rem;
   margin-bottom: 0;
+  text-transform: none;
 }
 .checkout-form button {
   margin-top: 1rem;

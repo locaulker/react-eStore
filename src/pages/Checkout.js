@@ -32,7 +32,7 @@ const Checkout = (props) => {
 
         {/* single input */}
         <div className="form-control">
-          <label htmlFor="name">name</label>
+          <label htmlFor="name">your name</label>
           <input 
             type="text"
             id="name"
@@ -43,6 +43,32 @@ const Checkout = (props) => {
           />
         </div>
 
+        {/* card elements */}
+        <div className="stripe-input">
+          <label htmlFor="card-element">credit or debit card</label>
+        </div>
+        <p className="stripe-info">for testing, use: <span>4242 4242 4242 4242</span>
+          <br/>enter any 5-digit number for zip code
+          <br/>enter any 3-digit number for CVC
+        </p>
+
+        {/* STRIPE ELEMENTS */}
+
+        {/* stripe errors */}
+          {error && <p className="form-empty">{error}</p>}
+
+        {/* empty value */}
+        {isEmpty 
+          ? (<p className="form-empty">Error: Name field is required</p>)
+          : (<button 
+              type="submit"
+              onClick={handleSubmit}
+              className="btn btn-primary btn-block"
+            >
+              submit
+            </button>
+          )
+        }
       </form>
     </section>
   )
