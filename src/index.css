@@ -281,11 +281,7 @@ About
   max-width: var(--maxWidth);
   margin: 0 auto;
 }
-.about-section p {
-  /* line-height: 2rem; */
-  /* font-weight: 400;
-  letter-spacing: 2px; */
-}
+
 /* 
 ====== 
 Error
